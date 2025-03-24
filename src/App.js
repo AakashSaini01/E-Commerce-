@@ -7,10 +7,20 @@ import MusicPromo from "./components/MusicPromo";
 import OurProducts from "./components/OurProducts";
 import FeaturedCategories from "./components/FeaturedCategories";
 import ServiceFeatures from "./components/ServiceFeatures";
+import Footer from "./components/Footer";
 
 const App = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [language, setLanguage] = useState("English");
+
+  const rootStyle = {
+    minHeight: "100vh",
+    width: "100%",
+    margin: 0,
+    padding: 0,
+    overflow: "hidden",
+    position: "relative",
+  };
 
   const headerStyle = {
     backgroundColor: "#000",
@@ -18,6 +28,7 @@ const App = () => {
     padding: "10px 0",
     textAlign: "center",
     width: "100%",
+    boxSizing: "border-box",
   };
 
   const navStyle = {
@@ -57,13 +68,9 @@ const App = () => {
 
   const mainLayoutStyle = {
     width: "100%",
-    maxWidth: "1440px",
     margin: "0 auto",
-    padding: "0 20px",
     boxSizing: "border-box",
-    "@media (max-width: 1024px)": {
-      padding: "0 10px",
-    },
+    overflow: "hidden",
   };
 
   const splitViewStyle = {
@@ -97,10 +104,13 @@ const App = () => {
 
   const fullWidthContentStyle = {
     width: "100%",
+    margin: 0,
+    padding: 0,
+    overflow: "hidden",
   };
 
   return (
-    <div style={{ minHeight: "100vh", width: "100%" }}>
+    <div style={rootStyle}>
       {/* Top Banner */}
       <div style={headerStyle}>
         <p>
@@ -172,6 +182,7 @@ const App = () => {
           <OurProducts />
           <FeaturedCategories />
           <ServiceFeatures />
+          <Footer />
         </div>
       </main>
     </div>

@@ -33,22 +33,28 @@ const ServiceFeatures = () => {
   const contentWrapperStyle = {
     width: "100%",
     margin: "0 auto",
-    padding: "0 40px",
+    padding: "0 20px",
+    boxSizing: "border-box",
   };
 
   const gridContainerStyle = {
-    display: "grid",
-    gridTemplateColumns: "0.8fr 2.4fr 0.8fr",
     width: "100%",
+    display: "flex",
+    justifyContent: "center",
   };
 
   const innerGridStyle = {
-    gridColumn: "2 / 3",
     display: "grid",
     gridTemplateColumns: "repeat(3, 1fr)",
     gap: "40px",
-    justifyItems: "center",
     width: "100%",
+    "@media (max-width: 1024px)": {
+      gap: "20px",
+    },
+    "@media (max-width: 768px)": {
+      gridTemplateColumns: "1fr",
+      gap: "20px",
+    },
   };
 
   const serviceCardStyle = {
@@ -91,7 +97,6 @@ const ServiceFeatures = () => {
     fontSize: "14px",
     color: "#666",
     lineHeight: "1.5",
-    maxWidth: "90%",
     margin: "0 auto",
   };
 
